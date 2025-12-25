@@ -1,5 +1,5 @@
 //
-//   Mesh.swift
+//  Mesh.swift
 //  Shredder
 //
 //  Created by Nate de Jager on 2025-12-23.

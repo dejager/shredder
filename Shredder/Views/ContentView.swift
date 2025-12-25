@@ -8,13 +8,11 @@
 import SwiftUI
 
 struct ContentView: View {
-    var body: some View {
-      VStack {
-        ShredderView()
-      }
-    }
+  var body: some View {
+    ShredderView()
+  }
 }
 
 #Preview {
-    ContentView()
+  ContentView()
 }

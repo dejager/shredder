@@ -7,45 +7,11 @@
 
 #include <metal_stdlib>
 using namespace metal;
+#include "ShaderTypes.metal"
 
 struct Vertex {
   float3 position [[attribute(0)]];
   float2 uv       [[attribute(1)]];
-};
-
-struct Params {
-  float4x4 mvp;
-
-  float tearAmount;
-  float tearWidth;
-  float tearOffset;
-  float uvOffset;
-
-  float ripSide;
-  float xDirection;
-
-  float tearXAngle;
-  float tearYAngle;
-  float tearZAngle;
-  float tearXOffset;
-
-  float3 shadeColor;
-  float shadeAmount;
-
-  float whiteThreshold;
-
-  float sheetHalfWidth;
-  float sheetFullWidth;
-  float sheetHeight;
-  float zOffset;
-  float groupY;
-  float groupRotZ;
-  float throwProgress;
-  float throwX;
-  float throwY;
-  float throwZ;
-  float throwRotZ;
-  float3 _pad;
 };
 
 struct Varyings {
@@ -73,8 +39,8 @@ static inline float3x3 rotationZ(float a) {
                   0, 0, 1 );
 }
 
-vertex Varyings ripVertex(Vertex in                 [[stage_in]],
-                          constant Params& p        [[buffer(1)]])
+vertex Varyings ripVertex(Vertex in                         [[stage_in]],
+                          constant ShredderUniforms& p      [[buffer(1)]])
 {
   Varyings out;
 
@@ -125,7 +91,7 @@ vertex Varyings ripVertex(Vertex in                 [[stage_in]],
 fragment half4 ripFragment(Varyings in [[stage_in]],
                            texture2d<half> photoTex  [[texture(0)]],
                            texture2d<half> ripTex    [[texture(1)]],
-                           constant Params& p        [[buffer(0)]])
+                           constant ShredderUniforms& p     [[buffer(0)]])
 {
   constexpr sampler s(address::clamp_to_edge, filter::linear);
 
