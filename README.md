@@ -1,3 +1,4 @@
-A SwiftUI interaction vibe-coded with GPT 5.2 Codex. Source provided unoptimized, as is.
+A SwiftUI interaction vibe-coded with GPT 5.2 Codex. Source provided as is.
 
-<img width="1024" height="766" alt="shredder" src="https://github.com/user-attachments/assets/5919d035-2847-4b0e-9a0f-7e75ae03605b" />
+https://github.com/user-attachments/assets/38389684-91f9-4d94-92d5-9aa775b0412f
+
